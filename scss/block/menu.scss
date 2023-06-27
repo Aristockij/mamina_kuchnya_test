@@ -1,0 +1,118 @@
+.gal{
+  align-items: stretch;
+  background: $color0;
+  @media(max-width: $mobile){
+    min-height: 650px;
+    height: calc(var(--vh, 1vh) * 100);
+    flex-direction: column;
+  }
+  &-img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform: skew(-5deg);
+    overflow: hidden;
+    &:before{
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      z-index: 1;
+      background: rgba(29, 29, 29, 0.14);
+      box-shadow: -3px 13px 23px rgba(0, 0, 0, 0.25);
+      //backdrop-filter: blur(7.5px);
+      backdrop-filter: blur(4px);
+      transition: .5s;
+    }
+    &-wrap{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 120%;
+      height: 120%;
+      transform: translate(-50%, -50%) skew(5deg);
+    }
+  }
+  &-link{
+    display: flex;
+    flex: 1;
+    text-decoration: none;
+    &:nth-child(1){
+      @media(max-width: $mobile){
+        flex: 1.5 1 0;
+      }
+      .gal-img{
+        width: 120%;
+      }
+    }
+    &:nth-child(3){
+      .gal-img{
+        width: 120%;
+        transform: translateX(8%) skew(-5deg);
+      }
+    }
+    &:nth-child(2){
+      .gal-wrap >div:nth-child(1){
+        @media(max-width: $screen_med){
+        padding-right: 60px;
+        }
+        //transform: translateX(-50px);
+      }
+    }
+  }
+  &-wrap{
+    flex:1;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    z-index: 1;
+    cursor: pointer;
+    @media(max-width: $mobile){
+      height: auto;
+    }
+    &:hover{
+      .gal-img:before, .gal-img:after{
+        backdrop-filter: blur(0);
+      }
+      .gal-img img{
+        scale: 1.01;
+      }
+    }
+    &>div:nth-child(1){
+      position: relative;
+      color: $color1;
+      z-index: 1;
+      font-family: $font2;
+      font-size: 48px;
+      max-width: 311px;
+      height: 195px;
+      margin-bottom: 57px;
+      line-height: 1.3;
+      @media(max-width: $screen_med){
+        font-size: 30px;
+      }
+      @media(max-width: $tablet){
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+      @media(max-width: $mobile){
+        margin-bottom: 0;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        max-width: 500px;
+      }
+    }
+    img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: .3s;
+      @include absolute-center;
+    }
+  }
+}

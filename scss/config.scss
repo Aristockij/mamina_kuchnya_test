@@ -1,0 +1,76 @@
+@import "mixins";
+
+$color0: #000000;
+$color1: #ffffff;
+$color2: #265131;
+$color3: #246B36;
+
+$ts: 0.3s;
+$ts2: 0.6s;
+
+$ts3: opacity 0.6s cubic-bezier(0.215, 0.61, 0.355, 1), transform 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+$ts4: opacity 1s cubic-bezier(0.215, 0.61, 0.355, 1), transform 0.8s cubic-bezier(0.215, 0.61, 0.355, 1);
+$ts5: transform 1s cubic-bezier(.77,0,.18,1);
+$ts6: stroke-dashoffset 2.5s cubic-bezier(.77,0,.18,1), transform 0.8s cubic-bezier(0.215, 0.61, 0.355, 1), fill 2.5s cubic-bezier(.77,0,.18,1),;
+$ts7: stroke-dashoffset 3.5s cubic-bezier(.77,0,.18,1);
+
+
+@font-face {
+  font-family: 'Inder';
+  src: url('/fonts/Inder-Regular.eot');
+  src: url('/fonts/Inder-Regular.eot?#iefix') format('embedded-opentype'),
+  url('/fonts/Inder-Regular.woff2') format('woff2'),
+  url('/fonts/Inder-Regular.woff') format('woff'),
+  url('/fonts/Inder-Regular.ttf') format('truetype'),
+  url('/fonts/Inder-Regular.svg#Inder-Regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Segoe Script';
+  src: url('/fonts/SegoeScript.eot');
+  src: url('/fonts/SegoeScript.eot?#iefix') format('embedded-opentype'),
+  url('/fonts/SegoeScript.woff2') format('woff2'),
+  url('/fonts/SegoeScript.woff') format('woff'),
+  url('/fonts/SegoeScript.ttf') format('truetype'),
+  url('/fonts/SegoeScript.svg#SegoeScript') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+
+$font1: 'Inder', sans-serif;
+$font2: 'Segoe Script', sans-serif;
+
+$screen_xxlarge: 1650px;
+$screen_xlarge: 1500px;
+$screen_large: 1400px;
+$screen_med: 1310px;
+$screen: 1150px;
+$tablet: 1050px;
+$mobile: 800px;
+$mobile_small: 580px;
+$mobile_xsmall: 440px;
+
+// easings
+$ease-cb: cubic-bezier(.4,0,.2,1);
+$ease-cb-2: cubic-bezier(.19,1,.22,1);
+$ease-cb-3: cubic-bezier(.77,0,.175,1);
+$ease-cb-4: cubic-bezier(.99,1,.92,1);
+//------------------------------
+//  nth-trans-delay()
+//  Transition Delay on nth-childs
+//  @param: $delay_items: number of nth-of-type items to create
+//  @param: $delay_time: transition-dealy value
+//-----------------------------
+@mixin nth-trans-delay($delay_items: 7, $delay_time: 0.2s){
+  @for $i from 1 through $delay_items {
+    &:nth-child(#{$i}) {
+      transition-delay: $delay_time * $i;
+    }
+  }
+}

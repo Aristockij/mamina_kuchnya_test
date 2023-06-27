@@ -1,0 +1,258 @@
+.form {
+  position: relative;
+  @include clearfix;
+  margin-left: auto;
+  margin-right: auto;
+
+  .cols{
+    .form--item{
+      width: 44%;
+
+      @media (max-width: $tablet) {
+        width: 47%;
+      }
+      @media (max-width: $mobile) {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.form--items {
+  padding: 20px 40px;
+
+  @media (max-width: $mobile_small) {
+    padding: 20px 20px;
+  }
+}
+
+.form--title{
+  font-size: 20px;
+  text-transform: uppercase;
+  color: $color0;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.form--caption{
+  text-align: center;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+.form--item {
+  position: relative;
+  margin-bottom: 30px;
+
+  &:before{
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px solid #cccccc;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+  }
+
+  &.horizontal{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-bottom: 7px;
+
+    .form--item-label{
+      width: 16%;
+      margin-bottom:0;
+      text-align: right;
+      padding-left: 0;
+      padding-top: 10px;
+    }
+
+    .form--item-field{
+      width: 80%;
+      margin-top: 0;
+    }
+
+  }
+
+  &-ok{
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &-error{
+    position: absolute;
+    top: calc(100% - 1px);
+    border-top: 1px solid $color2;
+    width: 100%;
+    font-size: 14px;
+    color: $color2;
+    padding-top: 5px;
+    z-index: 1;
+    @media (max-width: $mobile) {
+      font-size: 12px;
+    }
+
+    &-icon{
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      color: $color2;
+      font-size: 50px;
+      @media (max-width: $mobile) {
+        font-size: 36px;
+      }
+    }
+  }
+}
+.form--item-textarea{
+  .form--item-error-icon{
+
+      top: 100px;
+
+    }
+
+  .form--item-ok{
+    top: 100px;
+  }
+}
+.form--item-label {
+  display: block;
+  font-size: 20px;
+  color: $color0;
+  position: absolute;
+  z-index: 0;
+  top: 18px;
+  left: 30px;
+  transition: all 0.3s;
+
+  @media (max-width: $tablet) {
+   font-size: 18px;
+  }
+  @media (max-width: $mobile) {
+    left:0;
+  }
+  @media (max-width: $mobile_small) {
+    font-size: 16px;
+  }
+
+  &.focused{
+    font-size: 14px;
+    top: -10px;
+    left: 0;
+  }
+
+  & + .checkboxes {
+    margin-top: 0;
+  }
+}
+.form--item-staticlabel{
+  font-size: 20px;
+  color: $color0;
+  margin-bottom: 20px;
+  padding-left: 30px;
+  padding-top: 20px;
+  display: block;
+
+  @media (max-width: $tablet) {
+    font-size: 18px;
+  }
+  @media (max-width: $mobile) {
+    padding-left: 0;
+  }
+  @media (max-width: $mobile_small) {
+    padding-top: 10px;
+    font-size: 16px;
+  }
+}
+.form--item-field {
+  position: relative;
+}
+.form--error {
+  padding: 2px 0 0;
+  color: red;
+  font-size: 11px;
+  font-weight: 400;
+  animation: 0.5s ease-out;
+  animation-iteration-count: 2;
+  animation-fill-mode: both;
+  animation-delay: 0.3s;
+  animation-name: pulsateError;
+  width: 100%;
+  text-align: right;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+
+}
+
+.form-spinner{
+
+}
+
+
+
+.form--actions {
+  position: relative;
+  padding-top: 40px;
+  text-align: left;
+  @media (max-width: $mobile) {
+    padding-top: 20px;
+  }
+  @media (max-width: $mobile_small) {
+    padding-top: 0;
+  }
+}
+
+.form-result{
+
+  max-width: 500px;
+  @media (max-width: $mobile) {
+    max-width: 350px;
+  }
+  .h1{
+    color: $color2;
+    font-size: 120px;
+    margin-bottom: 40px;
+    @media (max-width: $mobile) {
+      font-size: 60px;
+    }
+  }
+  p{
+    color: $color1;
+    padding: 0 20px;
+    margin-bottom: 0;
+    @media (max-width: $mobile) {
+      padding: 0;
+    }
+
+    span{
+      color: $color2;
+    }
+  }
+}
+
+@keyframes pulsateError {
+
+  0% {
+    opacity: 1.0;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 1.0;
+  }
+
+}

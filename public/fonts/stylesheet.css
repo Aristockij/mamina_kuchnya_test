@@ -1,0 +1,26 @@
+@font-face {
+    font-family: 'Inder';
+    src: url('Inder-Regular.eot');
+    src: url('Inder-Regular.eot?#iefix') format('embedded-opentype'),
+        url('Inder-Regular.woff2') format('woff2'),
+        url('Inder-Regular.woff') format('woff'),
+        url('Inder-Regular.ttf') format('truetype'),
+        url('Inder-Regular.svg#Inder-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Segoe Script';
+    src: url('SegoeScript.eot');
+    src: url('SegoeScript.eot?#iefix') format('embedded-opentype'),
+        url('SegoeScript.woff2') format('woff2'),
+        url('SegoeScript.woff') format('woff'),
+        url('SegoeScript.ttf') format('truetype'),
+        url('SegoeScript.svg#SegoeScript') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

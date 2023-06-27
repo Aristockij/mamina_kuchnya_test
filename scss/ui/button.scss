@@ -1,0 +1,49 @@
+/*
+
+Buttons
+
+*/
+
+.btn {
+    position: relative;
+    padding: 5px 22px 5px 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    text-decoration: none;
+    text-align: center;
+    font-family: $font2;
+    font-size: 18px;
+    text-transform: uppercase;
+    line-height: 1;
+    white-space: nowrap;
+    min-width: 220px;
+    letter-spacing: 2px;
+    height: 63px;
+    color: $color3;
+    -webkit-appearance: none;
+    user-select: none;
+    backface-visibility: hidden;
+    @include box-sizing(border-box);
+    cursor: pointer !important;
+    border: none;
+    border-radius: 98px;
+    background: $color1;
+    transition: all 0.3s ease-out;
+    z-index: 1;
+    svg{
+        margin-right: 16px;
+    }
+    svg path{
+        transition: all 0.3s ease-out;
+    }
+    &:hover{
+        color: $color1;
+        background: $color3;
+        svg path{
+            //stroke: $color1;
+            fill: $color1;
+        }
+    }
+}
